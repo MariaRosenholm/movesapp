@@ -11,12 +11,41 @@
   --app-body-font: "Poppins", sans-serif;
 }
 
-div {
+body {
   font-family: var(--app-body-font);
-  background: linear-gradient(#d03d70, #c97d98);
 }
 
 h1 {
   font-family: var(--app-name-font);
   color: #6ff2dc;
+}
+
+/* == HEADER == */
+
+/* == MAIN == */
+
+/* == SEARCH == */
+
+/* == DANCEMOVE SINGLE == */
+
+/* == EDIT MOVE == */
+
+/* == NEW MOVE == */
+
+/* == FOOTER == */
+
+/* Don't touch this temp clases. They will be removed later! */
+.tepmSectionH1 {
+  background: white;
+  color: black;
+  font-family: sans-serif;
+  margin: 40px auto;
+  display: block;
+  width: 375px;
+}
+.tempContainer {
+  width: 375px;
+  height: 812px;
+  background: linear-gradient(#d03d70, #d2c0c6);
+  margin: 0px auto;
 }
