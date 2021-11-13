@@ -9,6 +9,39 @@
 :root {
   --app-name-font: "Bangers", cursive;
   --app-body-font: "Poppins", sans-serif;
+
+  /* === COLOR variables === */
+  --black: #000000;
+  --white: #ffffff;
+  --grey: #444444;
+  --rubber-red: #d03d70;
+  --rubber-red-light: #ff579e;
+  --rubber-red-dark: #9c0045;
+  --keppel-green: rgb(50, 191, 170);
+  --keppel-green-light: #6ff2dc;
+  --keppel-green-dark: #008e7b;
+  --lt-yellow: #fffde1;
+
+  --homepage-gradient: linear-gradient(
+    180deg,
+    hsla(325, 71%, 57%, 1) 0%,
+    hsla(339, 61%, 53%, 0) 100%
+  );
+  --searchpage-gradient: linear-gradient(
+    180deg,
+    var(--keppel-green),
+    var(--keppel-green-light)
+  );
+  --editpage-gradient: linear-gradient(
+    180deg,
+    var(--keppel-green),
+    var(--white)
+  );
+  --addpage-gradient: linear-gradient(
+    180deg,
+    var(--rubber-red-light),
+    var(--rubber-red-light)
+  );
 }
 
 div {
