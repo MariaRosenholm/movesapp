@@ -36,8 +36,8 @@ class App extends Component {
       */}
         <h1 className="tepmSectionH1">SEARCH</h1>
         <div className="tempContainer">
-          <Header />
-          <p>We have Dance Move page here</p>
+          {/* <Header /> 
+          <p>We have Dance Move page here</p> */}
           {<Search />}
           <Footer />
         </div>

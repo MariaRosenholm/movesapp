@@ -1,9 +1,11 @@
 import React from "react";
 
-const Card = () => {
+const Card = (props) => {
   return (
-    <div className="smallMoveCard">
-      <p>Move name by Creator name </p>
+    <div className="smallMoveCard" onClick={props.moveCard}>
+      <p>
+        {props.move} by {props.creator}
+      </p>
     </div>
   );
 };
