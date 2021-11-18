@@ -92,6 +92,18 @@ h1 {
 
 /* == FOOTER == */
 
+.footerwrapper {
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem;
+}
+
+.footericon {
+  color: var(--grey);
+  font-size: 36px;
+}
+
 /* Don't touch this temp clases. They will be removed later! */
 .tepmSectionH1 {
   background: white;
