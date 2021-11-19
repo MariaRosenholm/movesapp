@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Component } from "react";
 import Search from "./components/Search";
+import EditMove from "./components/EditMove";
 
 class App extends Component {
   state = {
@@ -59,9 +60,8 @@ class App extends Component {
       */}
         <h1 className="tepmSectionH1">EDIT DANCE MOVE</h1>
         <div className="tempContainer">
-          <Header />
-          <p>We have Edit page here</p>
-          {/* <Edit /> */}
+          <EditMove />
+
           <Footer />
         </div>
 
