@@ -64,7 +64,7 @@ h1 {
   align-items: center;
   padding-bottom: 3vh;
   overflow-y: scroll;
-  height: 80vh;
+  height: 90vh;
   background: var(--searchpage-gradient);
 }
 
@@ -76,14 +76,16 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-top: 1vh;
+  margin-bottom: 8vh;
 }
 
 .search input {
-  width: 60%;
+  width: 70%;
   padding: 0.8vh;
   padding-left: 3vw;
   border-radius: 20px;
-  margin: 1vh;
+  margin: 2vh;
   font-family: var(--app-body-font);
   font-size: 16px;
 }

@@ -39,7 +39,7 @@ class App extends Component {
         <div className="tempContainer">
           {/* <Header />
           <p>We have Dance Move page here</p> */}
-          {<Search dancelist={this.state.moves} />}
+          <Search dancelist={this.state.moves} />
           <Footer />
         </div>
 

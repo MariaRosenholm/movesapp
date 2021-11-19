@@ -11,7 +11,9 @@ JS
 CSS
 React
 
-## How to use JSON-server in development
+## How to run the app
+
+### How to use JSON-server in development
 
 You can start JSON-server with this command:
 
@@ -20,6 +22,18 @@ npx json-server --port=3001 --watch db.json
 ```
 
 Server will use db.json file as it's data storage.
+
+### Install the dependencies
+
+```zsh
+npm install
+```
+
+### Run the app
+
+```zsh
+npm start
+```
 
 ## Who made this
 
