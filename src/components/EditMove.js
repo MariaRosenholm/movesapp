@@ -3,26 +3,42 @@ import React from "react";
 const EditMove = () => {
   return (
     <div className="editmove">
-      <h3>Edit Move</h3>
+      <div className="editmove_header_wrapper">
+        <h1>Edit Move</h1>
+      </div>
       <form className="editmove-wrapper">
         <label>
-          EDIT move name
-          <input type="text" />
+          <input
+            type="text"
+            placeholder="EDIT move name"
+            className="edit_move_input"
+          />
         </label>
         <label>
-          ADD/EDIT creator name
-          <input type="text" />
+          <input
+            type="text"
+            placeholder="ADD/EDIT creator name"
+            className="edit_move_input"
+          />
         </label>
         <label>
-          ADD/EDIT notes
-          <input type="text" />
+          <input
+            type="text"
+            placeholder=" ADD/EDIT notes"
+            className="add_note"
+          />
         </label>
 
         <label>
-          ADD/EDIT instagram link
-          <input type="text" />
+          <input
+            type="text"
+            placeholder="ADD/EDIT instagram link"
+            className="add_note"
+          />
         </label>
-        <button type="button">SAVE CHANGES</button>
+        <div className="save_button">
+          <button type="button">SAVE CHANGES</button>
+        </div>
       </form>
     </div>
   );

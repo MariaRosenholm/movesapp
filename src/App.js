@@ -61,7 +61,6 @@ class App extends Component {
         <h1 className="tepmSectionH1">EDIT DANCE MOVE</h1>
         <div className="tempContainer">
           <EditMove />
-
           <Footer />
         </div>
 

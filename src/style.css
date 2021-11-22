@@ -20,7 +20,6 @@
   --keppel-green: rgb(50, 191, 170);
   --keppel-green-light: #6ff2dc;
   --keppel-green-dark: #008e7b;
-  --lt-yellow: #fffde1;
 
   --homepage-gradient: linear-gradient(
     180deg,
@@ -83,14 +82,14 @@ label {
 
 #main-submit {
   background-color: var(--rubber-red-dark);
-  color: var(--lt-yellow);
+  color: var(--white);
   cursor: pointer;
   transition: all 0.5s;
   width: 7.4rem;
   height: 2.5rem;
 }
 #main-submit:hover {
-  background-color: var(--lt-yellow);
+  background-color: var(--white);
   color: var(--rubber-red-dark);
 }
 .login {
@@ -164,13 +163,62 @@ input {
 /* == DANCEMOVE SINGLE == */
 
 /* == EDIT MOVE == */
+.editmove {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 3vh;
+  overflow-y: scroll;
+  height: 90vh;
+  background: linear-gradient(
+    to bottom,
+    var(--keppel-green) 0%,
+    var(--white) 100%
+  );
+}
 
+.editmove h1 {
+  font-size: 30px;
+  letter-spacing: 1.6px;
+  color: var(--grey);
+
+  text-align: center;
+}
+
+.editmove_header_wrapper {
+  background: var(--keppel-green-light);
+  width: 100%;
+  padding: 2rem;
+  margin-bottom: 20px;
+}
+
+.save_button {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.editmove button {
+  background-color: var(--keppel-green-light);
+  padding: 10px;
+  margin: 1.5rem;
+  border-radius: 5%;
+}
+
+.add_note {
+  height: 80px;
+  text-align: center;
+}
+
+.edit_move_input {
+  text-align: center;
+}
 /* == NEW MOVE == */
 
 /* == FOOTER == */
 
 .footerwrapper {
-  background-color: white;
+  background-color: var(--white);
   display: flex;
   justify-content: space-around;
   padding: 1rem;
@@ -188,7 +236,7 @@ input {
 
 /* Don't touch this temp clases. They will be removed later! */
 .tepmSectionH1 {
-  background: white;
+  background: var(--white);
   color: black;
   font-family: sans-serif;
   margin: 40px auto;
