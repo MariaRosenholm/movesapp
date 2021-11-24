@@ -4,8 +4,8 @@ const Main = () => {
   return (
     <div className="main-area">
       <div className="main-text">
-        <h1 className="h1-dance">Dance</h1>
-        <h1 className="h1-move">Move</h1>
+        <h1 className="h1-dance">Dan<span className="ce">ce</span></h1>
+        <h1 className="h1-move">Mo<span className="ves">ves</span></h1>
       </div>
       <form className="login">
         <div>
