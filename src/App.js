@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Component } from "react";
 import Search from "./components/Search";
+import AddMove from "./components/AddMove";
 import EditMove from "./components/EditMove";
 
 class App extends Component {
@@ -69,9 +70,7 @@ class App extends Component {
       */}
         <h1 className="tepmSectionH1">NEW DANCE MOVE</h1>
         <div className="tempContainer">
-          <Header />
-          <p>We have New dance move page here</p>
-          {/* <NewMove /> */}
+          <AddMove />
           <Footer />
         </div>
       </Router>
