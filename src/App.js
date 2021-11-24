@@ -6,6 +6,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { Component } from "react";
 import Search from "./components/Search";
 import EditMove from "./components/EditMove";
+import MainNoLog from "./components/MainNoLog";
 
 class App extends Component {
   state = {
@@ -30,6 +31,15 @@ class App extends Component {
         <div className="tempContainer">
           <Header />
           <Main />
+          <Footer />
+        </div>
+        {/* MAIN page w/o log in!
+      Header and wrapping div is only for this development face 
+      */}
+        <h1 className="tepmSectionH1">MAIN without LogIn</h1>
+        <div className="tempContainer">
+          <Header />
+          <MainNoLog />
           <Footer />
         </div>
 
