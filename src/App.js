@@ -1,12 +1,12 @@
+import { Component } from "react";
+import { Routes, Route, Link } from "react-router-dom";
 import "./style.css";
 import Main from "./components/Main";
-import Footer from "./components/Footer";
-import { Routes, Route, Link } from "react-router-dom";
-import { Component } from "react";
+import Login from "./components/Login";
 import Search from "./components/Search";
 import AddMove from "./components/AddMove";
 import EditMove from "./components/EditMove";
-import MainNoLog from "./components/MainNoLog";
+import Footer from "./components/Footer";
 
 class App extends Component {
   state = {
@@ -26,8 +26,8 @@ class App extends Component {
       <div className="app">
         <div className="tempContainer">
           <Routes>
-            <Route path="/" element={<MainNoLog />} />
-            <Route path="/login" element={<Main />} />
+            <Route path="/" element={<Main />} />
+            <Route path="/login" element={<Login />} />
             <Route
               path="/search"
               element={<Search dancelist={this.state.moves} />}
