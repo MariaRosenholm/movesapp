@@ -1,7 +1,7 @@
 import "./style.css";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
-import { BrowserRouter as Router } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import { Component } from "react";
 import Search from "./components/Search";
 import AddMove from "./components/AddMove";
@@ -23,7 +23,7 @@ class App extends Component {
 
   render() {
     return (
-      <Router>
+      <div className="app">
         <h1 className="tepmSectionH1">MAIN</h1>
         <div className="tempContainer">
           <Main />
@@ -60,7 +60,7 @@ class App extends Component {
           <AddMove />
           <Footer />
         </div>
-      </Router>
+      </div>
     );
   }
 }
