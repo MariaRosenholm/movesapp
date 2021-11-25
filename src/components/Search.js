@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import Card from "./SmallMoveCard";
-// import DanceMovePage from "./DanceMovePage";
+import DanceMove from "./danceMoveCard";
 
 class Search extends Component {
   state = {
     searchedKey: "",
+    showMovePage: false,
+    smallCardMove: " ",
   };
 
   searchInputHandler = (event) => {
@@ -13,8 +15,15 @@ class Search extends Component {
     });
   };
 
+  showMovePage = (move) => {
+    this.setState({
+      showMovePage: true,
+      smallCardMove: move,
+    });
+  };
+
   render() {
-    let danceFilter = this.props.dancelist.filter((searchedKey) => {
+    let danceFilter1 = this.props.dancelist.filter((searchedKey) => {
       let result;
 
       if (
@@ -37,13 +46,28 @@ class Search extends Component {
       return result;
     });
 
-    let list = danceFilter.map((c) => (
-      <Card
-        move={c.Move}
-        creator={c.Creator}
-        // moveCard={<DanceMovePage />}
-      />
-    ));
+    let danceFilter2 = this.props.dancelist.filter((smallCardMove) => {
+      let result;
+
+      if (
+        smallCardMove.Move.toLowerCase().includes(
+          this.state.smallCardMove.toLowerCase()
+        )
+      ) {
+        result = smallCardMove.Move.toLowerCase().includes(
+          this.state.smallCardMove.toLowerCase()
+        );
+      } else if (
+        smallCardMove.Creator.toLowerCase().includes(
+          this.state.smallCardMove.toLowerCase()
+        )
+      ) {
+        result = smallCardMove.Creator.toLowerCase().includes(
+          this.state.smallCardMove.toLowerCase()
+        );
+      }
+      return result;
+    });
 
     return (
       <div className="search">
@@ -54,8 +78,22 @@ class Search extends Component {
             className="searchValue" // onClick={deleteSearch}
           />
         </div>
-        {list}
-        <div></div>
+        {danceFilter1.map((c) => (
+          <Card
+            showMove={this.showMovePage}
+            move={c.Move}
+            creator={c.Creator}
+          />
+        ))}
+        {this.state.showMovePage &&
+          danceFilter2.map((c) => (
+            <DanceMove
+              move={c.Move}
+              creator={c.Creator}
+              info={c.HOX}
+              link={c.Link}
+            />
+          ))}
       </div>
     );
   }
