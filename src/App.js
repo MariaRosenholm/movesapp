@@ -24,40 +24,18 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        <h1 className="tepmSectionH1">MAIN</h1>
         <div className="tempContainer">
-          <Main />
-          <Footer />
-        </div>
-
-        <h1 className="tepmSectionH1">MAIN without LogIn</h1>
-        <div className="tempContainer">
-          <MainNoLog />
-          <Footer />
-        </div>
-
-        <h1 className="tepmSectionH1">SEARCH</h1>
-        <div className="tempContainer">
-          <Search dancelist={this.state.moves} />
-          <Footer />
-        </div>
-
-        <h1 className="tepmSectionH1">DANCE MOVE</h1>
-        <div className="tempContainer">
-          <p>We have Dance Move page here</p>
-          {/* <DanceMove /> */}
-          <Footer />
-        </div>
-
-        <h1 className="tepmSectionH1">EDIT DANCE MOVE</h1>
-        <div className="tempContainer">
-          <EditMove />
-          <Footer />
-        </div>
-
-        <h1 className="tepmSectionH1">NEW DANCE MOVE</h1>
-        <div className="tempContainer">
-          <AddMove />
+          <Routes>
+            <Route path="/" element={<MainNoLog />} />
+            <Route path="/login" element={<Main />} />
+            <Route
+              path="/search"
+              element={<Search dancelist={this.state.moves} />}
+            />
+            {/* <Route path="/moves/:id" element={<DanceMove />} /> */}
+            <Route path="/new" element={<AddMove />} />
+            <Route path="/edit/:id" element={<EditMove />} />
+          </Routes>
           <Footer />
         </div>
       </div>
