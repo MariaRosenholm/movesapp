@@ -59,16 +59,26 @@ body {
 /* == HEADER == */
 
 /* == MAIN == */
-.main-area {
-  padding: 10px;
+.main-area,
+.main-area-front {
+  background: var(--homepage-gradient);
+  padding-top: 5.5em;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  align-items: center;
-  height: 88%;
-  justify-content: space-evenly;
+
+  height: 88vh;
+  width: 100vw;
+  justify-content: space-between;
   align-content: center;
   align-items: flex-start;
+}
+
+.main-area-front {
+  padding-top: 5.5em;
+  padding-right: 7.3em;
+
+  align-items: center;
 }
 
 h1 {
@@ -77,6 +87,10 @@ h1 {
   font-size: 120px;
   letter-spacing: 2px;
   font-weight: normal;
+}
+.main-area h1 {
+  position: relative;
+  left: -10%;
 }
 .ce {
   position: absolute;
@@ -332,7 +346,8 @@ input {
 }
 
 /* Don't touch this temp clases. They will be removed later! */
-.tepmSectionH1 {
+/* saara 26.11. removed  from use */
+/*.tepmSectionH1 {
   background: var(--white);
   color: black;
   font-family: sans-serif;
@@ -340,10 +355,18 @@ input {
   display: block;
   width: 375px;
   font-size: 12px;
-}
-.tempContainer {
+}*/
+
+/*.tempContainer {
   width: 375px;
   height: 812px;
   background: linear-gradient(#d03d70, #d2c0c6);
+  margin: 0px auto;
+}*/
+/* saara 26.11. .tempContainer moved under .app  removed width and height from use*/
+.app {
+  /*width: 375px;*/
+  /*height: 812px;*/
+  /*background: linear-gradient(#d03d70, #d2c0c6);*/
   margin: 0px auto;
 }

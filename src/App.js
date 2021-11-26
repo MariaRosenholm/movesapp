@@ -24,20 +24,20 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        <div className="tempContainer">
-          <Routes>
-            <Route path="/" element={<Main />} />
-            <Route path="/login" element={<Login />} />
-            <Route
-              path="/search"
-              element={<Search dancelist={this.state.moves} />}
-            />
-            {/* <Route path="/moves/:id" element={<DanceMove />} /> */}
-            <Route path="/new" element={<AddMove />} />
-            <Route path="/edit/:id" element={<EditMove />} />
-          </Routes>
-          <Footer />
-        </div>
+
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/login" element={<Login />} />
+          <Route
+            path="/search"
+            element={<Search dancelist={this.state.moves} />}
+          />
+          {/* <Route path="/moves/:id" element={<DanceMove />} /> */}
+          <Route path="/new" element={<AddMove />} />
+          <Route path="/edit/:id" element={<EditMove />} />
+        </Routes>
+        <Footer />
+
       </div>
     );
   }

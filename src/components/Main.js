@@ -2,7 +2,7 @@ import React from "react";
 
 const Main = () => {
   return (
-    <div className="main-area">
+    <div className="main-area-front">
       <div className="main-text">
         <h1 className="h1-dance">
           Dan<span className="ce">ce</span>
