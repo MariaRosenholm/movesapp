@@ -165,10 +165,6 @@ input {
   text-align: center;
 }
 
-.smallMoveCard p {
-  text-shadow: var(--keppel-green) 3px 3px;
-}
-
 .smallMoveCard:hover {
   cursor: pointer;
   box-shadow: var(--keppel-green) 0px 6px 0px 0px;
@@ -221,12 +217,6 @@ input {
 
 /* == EDIT MOVE == */
 .editmove {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-bottom: 3vh;
-  overflow-y: scroll;
-  height: 90vh;
   background: linear-gradient(
     to bottom,
     var(--keppel-green) 0%,
@@ -234,51 +224,63 @@ input {
   );
 }
 
-.editmove h1 {
-  font-size: 30px;
-  letter-spacing: 1.6px;
-  color: var(--grey);
-
-  text-align: center;
-}
-
-.editmove_header_wrapper {
+.editmove_header {
+  font-family: var(--app-name-font);
   background: var(--keppel-green-light);
-  width: 100%;
-  padding: 2rem;
-  margin-bottom: 20px;
+  padding: 3rem 2rem 2rem 2rem;
+  font-size: 3rem;
+  letter-spacing: 1.6px;
+  font-weight: normal;
+  color: var(--grey);
+  text-align: center;
 }
 
-.save_button {
+.editmove_form {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.editmove button {
-  background-color: var(--keppel-green-light);
-  padding: 10px;
-  margin: 1.5rem;
-  border-radius: 5%;
-}
-
-.add_note {
-  height: 80px;
-  text-align: center;
+  margin-top: 1rem;
 }
 
 .edit_move_input {
-  text-align: center;
+  border-radius: 3px;
+  width: 80%;
+  font-family: var(--app-body-font);
+  font-size: 16px;
 }
+
+.saveChangesButton {
+  background-color: var(--keppel-green-light);
+  width: 150px;
+  height: 3rem;
+  margin: 1rem;
+  border: solid 0.5px var(--grey);
+  border-radius: 3px;
+  font-family: var(--app-body-font);
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0.8vh;
+}
+
 /* == NEW MOVE == */
+
+.addmove {
+  background: linear-gradient(
+    to bottom,
+    var(--rubber-red-light) 0%,
+    var(--rubber-red-dark) 100%
+  );
+}
 
 .addMoveHeader {
   font-family: var(--app-name-font);
   font-size: 3rem;
-  color: white;
+  letter-spacing: 1.6px;
+  font-weight: normal;
+  color: var(--white);
   background-color: var(--rubber-red-dark);
   text-align: center;
-  padding: 2rem;
+  padding: 3rem 2rem 2rem 2rem;
 }
 
 .addMoveForm {
@@ -298,13 +300,13 @@ input {
 .savebutton {
   text-transform: uppercase;
   background-color: var(--keppel-green-light);
-  width: 40%;
+  width: 150px;
   height: 3rem;
   margin: 1rem;
   border: solid 0.5px var(--grey);
   border-radius: 3px;
   font-family: var(--app-body-font);
-  font-size: 20px;
+  font-size: 18px;
   cursor: pointer;
   padding: 0.8vh;
 }
@@ -317,7 +319,6 @@ input {
   justify-content: space-around;
   padding: 1rem;
   position: relative;
-  /* position needs to be changed to "fixed" as soon as as the app starts to function as SPA */
   bottom: 0;
   left: 0;
   width: 100%;
