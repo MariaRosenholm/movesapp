@@ -1,6 +1,6 @@
 import React from "react";
 
-const DanceMoveCard = (props) => {
+const DanceMove = (props) => {
   let info = "notes";
   let IG = "Instagram link";
 
@@ -11,7 +11,7 @@ const DanceMoveCard = (props) => {
     IG = props.link;
   }
   return (
-    <div className="danceMovePage">
+    <div className="DanceMove">
       <div id="header"></div>
       <h3>{props.move}</h3>
       <h3>{props.creator}</h3>
@@ -21,4 +21,4 @@ const DanceMoveCard = (props) => {
   );
 };
 
-export default DanceMoveCard;
+export default DanceMove;

@@ -156,7 +156,7 @@ input {
   font-size: 16px;
 }
 
-.smallMoveCard {
+.ListItem {
   margin: 2vh;
   border-bottom: var(--keppel-green-dark) solid 1px;
   padding-bottom: 0.5vh;
@@ -165,13 +165,13 @@ input {
   text-align: center;
 }
 
-.smallMoveCard:hover {
+.ListItem:hover {
   cursor: pointer;
   box-shadow: var(--keppel-green) 0px 6px 0px 0px;
 }
 
-/* == DANCEMOVE SINGLE == */
-.danceMovePage {
+/* == DANCEMOVE  == */
+.DanceMove {
   margin-top: 10vh;
   width: 100%;
   height: 81vh;
@@ -192,19 +192,19 @@ input {
   width: 100%;
 }
 
-.danceMovePage h3,
-.danceMovePage p {
+.DanceMove h3,
+.DanceMove p {
   margin-top: 2vh;
   width: 70%;
   background-color: var(--white);
   padding: 1vh;
 }
 
-.danceMovePage h3 {
+.DanceMove h3 {
   height: 4.5vh;
 }
 
-.danceMovePage p {
+.DanceMove p {
   height: 10vh;
 }
 

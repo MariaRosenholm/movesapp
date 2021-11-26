@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Card from "./SmallMoveCard";
-import DanceMove from "./danceMoveCard";
+import ListItem from "./ListItem";
+import DanceMove from "./DanceMove";
 
 class Search extends Component {
   state = {
@@ -79,7 +79,7 @@ class Search extends Component {
           />
         </div>
         {danceFilter1.map((c) => (
-          <Card
+          <ListItem
             showMove={this.showMovePage}
             move={c.Move}
             creator={c.Creator}

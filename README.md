@@ -6,10 +6,10 @@ This application is build for specific dance group to help them to keep track wh
 
 ## Built with:
 
-HTML
-JS
-CSS
-React
+- HTML
+- JS
+- CSS
+- React
 
 ## How to run the app
 
