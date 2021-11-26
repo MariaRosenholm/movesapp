@@ -370,3 +370,17 @@ input {
   /*background: linear-gradient(#d03d70, #d2c0c6);*/
   margin: 0px auto;
 }
+
+.menu {
+  background-color: #fff;
+}
+
+.menu-icon {
+  position: fixed;
+  top: 23px;
+  left: 15px;
+}
+
+.hide {
+  display: none;
+}

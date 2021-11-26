@@ -8,6 +8,7 @@ import AddMove from "./components/AddMove";
 import EditMove from "./components/EditMove";
 import Footer from "./components/Footer";
 import DanceMove from "./components/DanceMove";
+import Menu from "./components/Menu";
 
 class App extends Component {
   state = {
@@ -40,6 +41,7 @@ class App extends Component {
           <Route path="/edit/:id" element={<EditMove />} />
         </Routes>
         <Footer />
+        <Menu />
       </div>
     );
   }
