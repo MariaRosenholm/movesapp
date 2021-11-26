@@ -129,7 +129,7 @@ input {
   flex-direction: column;
   align-items: center;
   overflow-y: scroll;
-  height: 80vh;
+  height: 100vh;
   background: var(--searchpage-gradient);
   position: relative;
 }
@@ -217,6 +217,7 @@ input {
 
 /* == EDIT MOVE == */
 .editmove {
+  height: 100vh;
   background: linear-gradient(
     to bottom,
     var(--keppel-green) 0%,
@@ -265,6 +266,7 @@ input {
 /* == NEW MOVE == */
 
 .addmove {
+  height: 100vh;
   background: linear-gradient(
     to bottom,
     var(--rubber-red-light) 0%,
@@ -318,7 +320,7 @@ input {
   display: flex;
   justify-content: space-around;
   padding: 1rem;
-  position: relative;
+  position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
