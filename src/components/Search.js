@@ -1,24 +1,14 @@
 import React, { Component } from "react";
 import ListItem from "./ListItem";
-import DanceMove from "./DanceMove";
 
 class Search extends Component {
   state = {
     searchedKey: "",
-    showMovePage: false,
-    smallCardMove: " ",
   };
 
   searchInputHandler = (event) => {
     this.setState({
       searchedKey: event.target.value,
-    });
-  };
-
-  showMovePage = (move) => {
-    this.setState({
-      showMovePage: true,
-      smallCardMove: move,
     });
   };
 
@@ -46,29 +36,6 @@ class Search extends Component {
       return result;
     });
 
-    let danceFilter2 = this.props.dancelist.filter((smallCardMove) => {
-      let result;
-
-      if (
-        smallCardMove.Move.toLowerCase().includes(
-          this.state.smallCardMove.toLowerCase()
-        )
-      ) {
-        result = smallCardMove.Move.toLowerCase().includes(
-          this.state.smallCardMove.toLowerCase()
-        );
-      } else if (
-        smallCardMove.Creator.toLowerCase().includes(
-          this.state.smallCardMove.toLowerCase()
-        )
-      ) {
-        result = smallCardMove.Creator.toLowerCase().includes(
-          this.state.smallCardMove.toLowerCase()
-        );
-      }
-      return result;
-    });
-
     return (
       <div className="search">
         <div className="searchWrapper">
@@ -80,20 +47,12 @@ class Search extends Component {
         </div>
         {danceFilter1.map((c) => (
           <ListItem
-            showMove={this.showMovePage}
             move={c.Move}
             creator={c.Creator}
+            Id={c.Id}
+            idCol={this.props.idCollector}
           />
         ))}
-        {this.state.showMovePage &&
-          danceFilter2.map((c) => (
-            <DanceMove
-              move={c.Move}
-              creator={c.Creator}
-              info={c.HOX}
-              link={c.Link}
-            />
-          ))}
       </div>
     );
   }
