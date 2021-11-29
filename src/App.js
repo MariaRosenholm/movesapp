@@ -12,7 +12,6 @@ import DanceMove from "./components/DanceMove";
 class App extends Component {
   state = {
     moves: [],
-    id: 0,
   };
 
   componentDidMount() {
@@ -23,10 +22,6 @@ class App extends Component {
       });
   }
 
-  idCollector = (ID) => {
-    this.setState({ id: ID });
-  };
-
   render() {
     return (
       <div className="app">
@@ -35,21 +30,11 @@ class App extends Component {
           <Route path="/login" element={<Login />} />
           <Route
             path="/search"
-            element={
-              <Search
-                dancelist={this.state.moves}
-                idCollector={this.idCollector}
-              />
-            }
+            element={<Search dancelist={this.state.moves} />}
           />
           <Route
-            path={"/moves/" + this.state.id}
-            element={
-              <DanceMove
-                listItemId={this.state.id}
-                dancelist={this.state.moves}
-              />
-            }
+            path={"/moves/:id"}
+            element={<DanceMove dancelist={this.state.moves} />}
           />
           <Route path="/new" element={<AddMove />} />
           <Route path="/edit/:id" element={<EditMove />} />

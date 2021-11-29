@@ -13,27 +13,12 @@ class Search extends Component {
   };
 
   render() {
-    let danceFilter1 = this.props.dancelist.filter((searchedKey) => {
-      let result;
-
-      if (
-        searchedKey.Move.toLowerCase().includes(
-          this.state.searchedKey.toLowerCase()
-        )
-      ) {
-        result = searchedKey.Move.toLowerCase().includes(
-          this.state.searchedKey.toLowerCase()
-        );
-      } else if (
-        searchedKey.Creator.toLowerCase().includes(
-          this.state.searchedKey.toLowerCase()
-        )
-      ) {
-        result = searchedKey.Creator.toLowerCase().includes(
-          this.state.searchedKey.toLowerCase()
-        );
-      }
-      return result;
+    let danceFilter = this.props.dancelist.filter((dm) => {
+      const key = this.state.searchedKey.toLowerCase();
+      return (
+        dm.Move.toLowerCase().includes(key) ||
+        dm.Creator.toLowerCase().includes(key)
+      );
     });
 
     return (
@@ -45,13 +30,8 @@ class Search extends Component {
             className="searchValue" // onClick={deleteSearch}
           />
         </div>
-        {danceFilter1.map((c) => (
-          <ListItem
-            move={c.Move}
-            creator={c.Creator}
-            Id={c.Id}
-            idCol={this.props.idCollector}
-          />
+        {danceFilter.map((c) => (
+          <ListItem key={c.Id} move={c.Move} creator={c.Creator} Id={c.Id} />
         ))}
       </div>
     );
