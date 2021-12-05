@@ -46,6 +46,11 @@
 body {
   font-family: var(--app-body-font);
 }
+
+.app {
+  margin: 0px auto;
+}
+
 #main-submit {
   border-radius: 5px;
   text-transform: uppercase;
@@ -55,8 +60,6 @@ body {
   width: 100%;
   margin: 1rem;
 }
-
-/* == HEADER == */
 
 /* == MAIN == */
 .main-area,
@@ -345,28 +348,19 @@ input {
   font-size: 36px;
 }
 
-/* Don't touch this temp clases. They will be removed later! */
-/* saara 26.11. removed  from use */
-/*.tepmSectionH1 {
-  background: var(--white);
-  color: black;
-  font-family: sans-serif;
-  margin: 40px auto;
-  display: block;
-  width: 375px;
-  font-size: 12px;
-}*/
+/* == MENU == */
 
-/*.tempContainer {
-  width: 375px;
-  height: 812px;
-  background: linear-gradient(#d03d70, #d2c0c6);
-  margin: 0px auto;
-}*/
-/* saara 26.11. .tempContainer moved under .app  removed width and height from use*/
-.app {
-  /*width: 375px;*/
-  /*height: 812px;*/
-  /*background: linear-gradient(#d03d70, #d2c0c6);*/
-  margin: 0px auto;
+.menu {
+  background-color: #fff;
+}
+
+.menu-icon {
+  position: fixed;
+  top: 23px;
+  left: 15px;
+  z-index: 10;
+}
+
+.hide {
+  display: none;
 }

@@ -8,6 +8,7 @@ import AddMove from "./components/AddMove";
 import EditMove from "./components/EditMove";
 import Footer from "./components/Footer";
 import DanceMove from "./components/DanceMove";
+import Menu from "./components/Menu";
 
 const EditMoveWrapper = (props) => {
   const params = useParams();
@@ -20,7 +21,6 @@ class App extends Component {
   };
 
   getAllMoves = () => {
-    console.log("Fetching all data");
     fetch("http://localhost:3001/moves/")
       .then((response) => response.json())
       .then((moveData) => {
@@ -61,6 +61,7 @@ class App extends Component {
           />
         </Routes>
         <Footer />
+        <Menu />
       </div>
     );
   }
