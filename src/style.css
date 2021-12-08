@@ -149,6 +149,7 @@ input {
   height: 100vh;
   background: var(--searchpage-gradient);
   position: relative;
+  padding-bottom: 15vh;
 }
 
 .searchWrapper {
@@ -158,7 +159,7 @@ input {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: right;
   padding-top: 1vh;
   margin-bottom: 8vh;
 }
@@ -189,47 +190,49 @@ input {
 
 /* == DANCEMOVE  == */
 .DanceMove {
-  margin-top: 10vh;
   width: 100%;
-  height: 81vh;
+  height: 100vh;
   text-align: center;
-  background-color: var(--rubber-red-light);
+  background: var(--homepage-gradient);
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: 3;
   position: absolute;
-  top: -13%;
   overflow: hidden;
-}
-
-#header {
-  background-color: var(--rubber-red-dark);
-  height: 3vh;
-  width: 100%;
+  padding-top: 15vh;
 }
 
 .DanceMove h3,
 .DanceMove p {
-  margin-top: 2vh;
-  width: 70%;
-  background-color: var(--white);
+  margin-top: 0.5vh;
+  width: 60%;
   padding: 1vh;
 }
 
 .DanceMove h3 {
-  height: 4.5vh;
+  font-family: var(--app-name-font);
+  color: var(--keppel-green-light);
+  font-size: 2rem;
 }
 
-.DanceMove p {
-  height: 10vh;
+#notesAndIGWrapper {
+  margin-top: 5vh;
+  height: 40vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+span {
+  font-style: italic;
 }
 
 #IG {
   overflow-x: scroll;
   margin-bottom: 2vh;
+  margin-top: 4vh;
   height: 70vh;
-  width: 90%;
 }
 
 /* == EDIT MOVE == */
