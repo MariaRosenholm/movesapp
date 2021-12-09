@@ -3,6 +3,7 @@ import React, { Component } from "react";
 const baseURL = "http://localhost:3001/moves/";
 
 class EditMove extends Component {
+  backToMoves = this.props.backToMoves;
   move = this.props.dancelist.find((move) => move.Id === this.props.id);
   state = {
     Id: this.props.id,
@@ -27,6 +28,9 @@ class EditMove extends Component {
     })
       .then(() => {
         this.props.getAllMoves();
+      })
+      .then(() => {
+        this.backToMoves("/moves/" + this.state.Id)
       })
       .catch((error) => {
         console.log("this is the error", error);

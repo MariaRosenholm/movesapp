@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Routes, Route, useParams } from "react-router-dom";
+import { Routes, Route, useParams, useNavigate } from "react-router-dom";
 import "./style.css";
 import Main from "./components/Main";
 import Login from "./components/Login";
@@ -11,8 +11,9 @@ import DanceMove from "./components/DanceMove";
 import Menu from "./components/Menu";
 
 const EditMoveWrapper = (props) => {
+  const backToMoves = useNavigate();
   const params = useParams();
-  return <EditMove id={+params.id} {...props} />;
+  return <EditMove backToMoves={backToMoves} id={+params.id} {...props} />;
 };
 
 class App extends Component {
