@@ -1,5 +1,8 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPenSquare } from "@fortawesome/free-solid-svg-icons";
 
 const DanceMove = ({ dancelist }) => {
   const params = useParams();
@@ -26,9 +29,17 @@ const DanceMove = ({ dancelist }) => {
 
   return (
     <div className="DanceMove">
+      <div id="header"></div>
+      <Link to={"/edit/" + params.id} className="squre-pen-wrapper">
+        <FontAwesomeIcon icon={faPenSquare} className="squre-pen" />
+
+        {/*  <button>edit</button> */}
+      </Link>
+
       <h3>{move?.Move}</h3>
       <p>by</p>
       <h3>{move?.Creator}</h3>
+
       <div id="notesAndIGWrapper">
         <p>
           {notesText}

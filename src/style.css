@@ -199,7 +199,25 @@ input {
   align-items: center;
   position: absolute;
   overflow: hidden;
+
   padding-top: 15vh;
+}
+
+.squre-pen {
+  color: white;
+  font-size: 36px;
+}
+
+.squre-pen-wrapper {
+  position: relative;
+  margin-left: 350px;
+  margin-top: 30px;
+}
+
+#header {
+  background-color: var(--rubber-red-dark);
+  height: 3vh;
+  width: 100%;
 }
 
 .DanceMove h3,
