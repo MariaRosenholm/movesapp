@@ -36,7 +36,7 @@ class EditMove extends Component {
       .then(() => {
         let timeoutId = setTimeout(() => {
           this.navigate("/moves/" + this.state.input.Id);
-        }, 2000);
+        }, 5000);
         this.setState({ showSavedSuccessfully: true, timeoutId: timeoutId });
       })
       .catch((error) => {
