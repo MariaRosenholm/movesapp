@@ -30,8 +30,13 @@ class Search extends Component {
             className="searchValue" // onClick={deleteSearch}
           />
         </div>
-        {danceFilter.map((c) => (
-          <ListItem key={c.Id} move={c.Move} creator={c.Creator} Id={c.Id} />
+        {danceFilter.map((filteredDanceMove) => (
+          <ListItem
+            key={filteredDanceMove.Id}
+            move={filteredDanceMove.Move}
+            creator={filteredDanceMove.Creator}
+            Id={filteredDanceMove.Id}
+          />
         ))}
       </div>
     );
