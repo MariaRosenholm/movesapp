@@ -1,29 +1,47 @@
 import React, { Component } from "react";
+import SavedSuccessfully from "./SavedSuccessfully";
+
 
 class AddMove extends Component {
   state = {
-    Move: "",
-    Creator: "",
-    HOX: "",
-    Link: "",
+    inputData: {
+      Move: "",
+      Creator: "",
+      HOX: "",
+      Link: "",
+    },
+      showSavedSuccessfully: false
   };
 
   inputHandler = (e) => {
-    this.setState({ [e.target.name]: e.target.value });
-  };
+    this.setState({
+      inputData: {...this.state.inputData, [e.target.name]: e.target.value }
+  });
+};
 
   addMoveSubmitHandler = (e) => {
     e.preventDefault();
     fetch("http://localhost:3001/moves", {
       method: "POST",
       headers: { "Content-type": "application/json" },
-      body: JSON.stringify(this.state),
+      body: JSON.stringify(this.state.inputData),
     }).then(() => {
       this.props.getAllMoves();
-    });
+    })
+    .then(()=> {
+      this.setState(
+        {inputData: {
+          Move: "",
+          Creator: "",
+          HOX: "",
+          Link: "",
+        },
+        showSavedSuccessfully: true})
+    })
+    .catch(error => console.log(error));
   };
 
-  render() {
+  addMoveForm = () => {
     return (
       <div className="addmove">
         <h3 className="addMoveHeader">Add Move</h3>
@@ -34,14 +52,14 @@ class AddMove extends Component {
             placeholder="Add new MOVE NAME"
             size="10"
             required
-            value={this.state.Move}
+            value={this.state.inputData.Move}
             onChange={this.inputHandler}
           />
           <input
             type="text"
             name="Creator"
             placeholder="Add CREATOR'S NAME (optional)"
-            value={this.state.Creator}
+            value={this.state.inputData.Creator}
             onChange={this.inputHandler}
           />
           <input
@@ -49,23 +67,42 @@ class AddMove extends Component {
             name="HOX"
             placeholder="Add NOTE (optional)"
             maxLength="200"
-            value={this.state.HOX}
+            value={this.state.inputData.HOX}
             onChange={this.inputHandler}
           />
           <input
             type="text"
             name="Link"
             placeholder="Add INSTAGRAM LINK (optional)"
-            value={this.state.Link}
+            value={this.state.inputData.Link}
             onChange={this.inputHandler}
           />
           <button type="submit" className="savebutton">
             save
           </button>
         </form>
-      </div>
-    );
+        </div>
+    )
   }
+
+  showSavedSuccessfully = () => {
+    return (
+      <>
+      {this.addMoveForm()}
+      <SavedSuccessfully />
+      </>
+      )
+  }
+
+  render() {
+    if(this.state.showSavedSuccessfully){
+      return this.showSavedSuccessfully();
+    }
+    
+    if(!this.state.showSavedSuccessfully){
+      return this.addMoveForm();
+    }
+}
 }
 
 export default AddMove;
