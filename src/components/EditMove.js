@@ -55,14 +55,14 @@ class EditMove extends Component {
           />
           <input
             type="text"
-            placeholder="ADD/EDIT creator name"
+            placeholder="ADD creator name"
             className="edit_move_input"
             name="Creator"
             value={this.state.Creator}
             onChange={this.inputHandler}
           />
           <input
-            placeholder="ADD/EDIT notes"
+            placeholder="ADD notes"
             className="edit_move_input"
             maxLength="100"
             name="HOX"
@@ -71,7 +71,7 @@ class EditMove extends Component {
           />
           <input
             type="text"
-            placeholder="ADD/EDIT instagram link"
+            placeholder="ADD instagram link"
             className="edit_move_input"
             name="Link"
             value={this.state.Link}
