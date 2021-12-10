@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import SavedSuccessfully from "./SavedSuccessfully";
 
-
 class AddMove extends Component {
   state = {
     inputData: {
@@ -85,23 +84,13 @@ class AddMove extends Component {
     )
   }
 
-  showSavedSuccessfully = () => {
+  render() {
     return (
       <>
       {this.addMoveForm()}
-      <SavedSuccessfully />
+      {this.state.showSavedSuccessfully &&<SavedSuccessfully />}
       </>
       )
-  }
-
-  render() {
-    if(this.state.showSavedSuccessfully){
-      return this.showSavedSuccessfully();
-    }
-    
-    if(!this.state.showSavedSuccessfully){
-      return this.addMoveForm();
-    }
 }
 }
 
