@@ -410,6 +410,10 @@ span {
   height: auto;
 }
 
+.dots-vertical {
+  transform: rotate(90deg);
+}
+
 .hide {
   display: none;
 }

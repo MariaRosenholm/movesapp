@@ -13,6 +13,7 @@ import { useEffect, useState } from "react";
 function Menu() {
   let location = useLocation();
   let path = location.pathname;
+  let dotsVertical = "";
 
   const [classes, setClasses] = useState("menu hide");
 
@@ -25,12 +26,13 @@ function Menu() {
   };
 
   if (path === "/new" || path.includes("/edit")) return <></>;
+  if (path === "/search") dotsVertical = "dots-vertical";
 
   return (
     <div className="menu-icon">
       <FontAwesomeIcon
         icon={faEllipsisH}
-        className="footericon"
+        className={"footericon " + dotsVertical}
         onClick={clickHandler}
       />
       <div className={classes}>
