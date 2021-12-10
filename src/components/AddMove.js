@@ -9,14 +9,14 @@ class AddMove extends Component {
       HOX: "",
       Link: "",
     },
-      showSavedSuccessfully: false
+    showSavedSuccessfully: false,
   };
 
   inputHandler = (e) => {
     this.setState({
-      inputData: {...this.state.inputData, [e.target.name]: e.target.value }
-  });
-};
+      inputData: { ...this.state.inputData, [e.target.name]: e.target.value },
+    });
+  };
 
   addMoveSubmitHandler = (e) => {
     e.preventDefault();
@@ -24,20 +24,20 @@ class AddMove extends Component {
       method: "POST",
       headers: { "Content-type": "application/json" },
       body: JSON.stringify(this.state.inputData),
-    }).then(() => {
-      this.props.getAllMoves();
     })
-    .then(()=> {
-      this.setState(
-        {inputData: {
-          Move: "",
-          Creator: "",
-          HOX: "",
-          Link: "",
-        },
-        showSavedSuccessfully: true})
-    })
-    .catch(error => console.log(error));
+      .then(this.props.getAllMoves)
+      .then(() => {
+        this.setState({
+          inputData: {
+            Move: "",
+            Creator: "",
+            HOX: "",
+            Link: "",
+          },
+          showSavedSuccessfully: true,
+        });
+      })
+      .catch((error) => console.log(error));
   };
 
   addMoveForm = () => {
@@ -80,18 +80,20 @@ class AddMove extends Component {
             save
           </button>
         </form>
-        </div>
-    )
-  }
+      </div>
+    );
+  };
 
   render() {
     return (
       <>
-      {this.addMoveForm()}
-      {this.state.showSavedSuccessfully &&<SavedSuccessfully />}
+        {this.addMoveForm()}
+        {this.state.showSavedSuccessfully && (
+          <SavedSuccessfully resetState={this.resetState} reload={true} />
+        )}
       </>
-      )
-}
+    );
+  }
 }
 
 export default AddMove;

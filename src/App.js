@@ -11,9 +11,9 @@ import DanceMove from "./components/DanceMove";
 import Menu from "./components/Menu";
 
 const EditMoveWrapper = (props) => {
-  const backToMoves = useNavigate();
+  const navigate = useNavigate();
   const params = useParams();
-  return <EditMove backToMoves={backToMoves} id={+params.id} {...props} />;
+  return <EditMove navigate={navigate} id={+params.id} {...props} />;
 };
 
 class App extends Component {
