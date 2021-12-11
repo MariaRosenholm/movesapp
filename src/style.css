@@ -160,6 +160,10 @@ input {
   border: solid 0.5px var(--grey);
 }
 
+.login input:focus {
+  outline: 2px solid var(--keppel-green-light);
+}
+
 /* == SEARCH == */
 .search {
   display: flex;
@@ -187,11 +191,15 @@ input {
 .search input {
   width: 70%;
   padding: 0.8vh;
-  padding-left: 3 vw;
+  padding-left: 3vw;
   border-radius: 20px;
   margin: 2vh 6vh 2vh 0;
   font-family: var(--app-body-font);
   font-size: 16px;
+}
+
+.search input:focus {
+  outline: 2px solid var(--rubber-red-light);
 }
 
 .ListItem {
@@ -312,6 +320,10 @@ span {
   font-size: 16px;
 }
 
+.edit_move_input:focus {
+  outline: 2px solid var(--rubber-red-light);
+}
+
 .saveChangesButton {
   background-color: var(--keppel-green-light);
   width: 150px;
@@ -360,6 +372,10 @@ span {
   width: 80%;
   font-family: var(--app-body-font);
   font-size: 16px;
+}
+
+.addMoveForm input:focus {
+  outline: 2px solid var(--keppel-green-light);
 }
 
 .savebutton {
