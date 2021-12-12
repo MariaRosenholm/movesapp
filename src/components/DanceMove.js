@@ -2,7 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPenSquare } from "@fortawesome/free-solid-svg-icons";
+import { faEdit } from "@fortawesome/free-solid-svg-icons";
 
 const DanceMove = ({ dancelist }) => {
   const params = useParams();
@@ -14,14 +14,14 @@ const DanceMove = ({ dancelist }) => {
   let link;
 
   if (!move?.HOX) {
-    notes = "";
+    notesText = "No notes added.";
   } else {
     notesText = "Notes: ";
     notes = move?.HOX;
   }
 
   if (!move?.Link) {
-    link = "";
+    linkText = "No Instagram link added.";
   } else {
     linkText = "Click to Instagram video!";
     link = move?.Link;
@@ -29,11 +29,8 @@ const DanceMove = ({ dancelist }) => {
 
   return (
     <div className="DanceMove">
-      <div id="header"></div>
       <Link to={"/edit/" + params.id} className="squre-pen-wrapper">
-        <FontAwesomeIcon icon={faPenSquare} className="squre-pen" />
-
-        {/*  <button>edit</button> */}
+        <FontAwesomeIcon icon={faEdit} className="squre-pen" />
       </Link>
 
       <h3>{move?.Move}</h3>

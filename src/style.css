@@ -199,31 +199,24 @@ input {
   width: 100%;
   height: 100vh;
   text-align: center;
-  background: var(--homepage-gradient);
+  background: var(--editpage-gradient);
   display: flex;
   flex-direction: column;
   align-items: center;
   position: absolute;
   overflow: hidden;
-
-  padding-top: 15vh;
+  padding-top: 25vh;
 }
 
 .squre-pen {
-  color: white;
-  font-size: 36px;
+  color: var(--grey);
+  font-size: 34px;
 }
 
 .squre-pen-wrapper {
-  position: relative;
-  margin-left: 350px;
-  margin-top: 30px;
-}
-
-#header {
-  background-color: var(--rubber-red-dark);
-  height: 3vh;
-  width: 100%;
+  position: fixed;
+  top: 3vh;
+  right: 4vw;
 }
 
 .DanceMove h3,
@@ -234,7 +227,7 @@ input {
 
 .DanceMove h3 {
   font-family: var(--app-name-font);
-  color: var(--keppel-green-light);
+  color: var(--rubber-red);
   font-size: 2rem;
 }
 
@@ -247,7 +240,7 @@ input {
   align-items: center;
 }
 
-span {
+#notesAndIGWrapper span {
   font-style: italic;
 }
 
