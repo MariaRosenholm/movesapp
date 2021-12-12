@@ -203,12 +203,23 @@ input {
 }
 
 .ListItem {
-  margin: 2vh;
-  border-bottom: var(--keppel-green-dark) solid 1px;
-  padding-bottom: 0.5vh;
-  box-shadow: var(--keppel-green) 0px 2px 0px 0px;
-  border-radius: 2px;
+  /* display: flex;
+  flex-direction: row;
+  
+  align-items: center; */
+  width: 380px;
+  padding: 10px;
+  /* height: 200px; */
+  margin: 8px;
+  /* border-bottom: var(--keppel-green-dark) solid 1px; */
+  /* padding-bottom: 0.5vh; */
+  /* box-shadow: var(--keppel-green) 0px 2px 0px 0px; */
+  /* border-radius: 2px; */
   text-align: center;
+  border: hidden;
+  border-radius: 18px;
+  /*   padding: 5px; */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .ListItem:hover {
@@ -216,8 +227,19 @@ input {
   box-shadow: var(--keppel-green) 0px 6px 0px 0px;
 }
 .insta {
-  font-size: 2em;
-  color: var(--grey);
+  font-size: 1.5em;
+  color: black;
+  position: absolute;
+  right: 35px;
+}
+
+span {
+  margin-right: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }
 
 /* == DANCEMOVE  == */
@@ -445,6 +467,12 @@ p {
 
 .individual-icon {
   margin-left: 5px;
+  cursor: pointer;
+}
+
+.individual-icon,
+p {
+  cursor: pointer;
 }
 
 .icon_and_name_wrapper {
