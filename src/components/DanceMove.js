@@ -1,72 +1,77 @@
-import React from "react";
-import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEdit } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
-import parse from "html-react-parser";
+import React from 'react';
+import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEdit } from '@fortawesome/free-solid-svg-icons';
+import { useState, useEffect } from 'react';
+import parse from 'html-react-parser';
+import Loader from './Loader';
 
 function DanceMove({ dancelist }) {
-  const [video, setVideo] = useState();
+	const [isLoading, setIsLoading] = useState(true);
+	const [videoOrText, setVideoOrText] = useState('No Instagram link added.');
+	const params = useParams();
 
-  function getVideo(link) {
-    window.FB.api(
-      "/instagram_oembed",
-      "GET",
-      {
-        url: link,
-        access_token: process.env.REACT_APP_access_token,
-      },
-      function (response) {
-        setVideo(response.html);
-      }
-    );
-  }
+	let move = dancelist.find((move) => move.Id === +params.id);
+	let link = move?.Link;
+	let notes;
+	let notesText;
 
-  const params = useParams();
-  let move = dancelist.find((move) => move.Id === +params.id);
+	useEffect(() => {
+		if (link) {
+			getVideo(link);
+		} else {
+			setIsLoading(false);
+		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
 
-  let notes;
-  let notesText;
-  let link;
-  let videoOrText;
+	function getVideo(link) {
+		window.FB.api(
+			'/instagram_oembed',
+			'GET',
+			{
+				url: link,
+				access_token: process.env.REACT_APP_access_token,
+			},
+			function (response) {
+				setVideoOrText(response.html);
+				setIsLoading(false);
+			}
+		);
+	}
 
-  if (!move?.HOX) {
-    notesText = "No notes added.";
-  } else {
-    notesText = "Notes: ";
-    notes = move?.HOX;
-  }
+	if (!move?.HOX) {
+		notesText = 'No notes added.';
+	} else {
+		notesText = 'Notes: ';
+		notes = move?.HOX;
+	}
 
-  if (!move?.Link) {
-    videoOrText = "No Instagram link added.";
-  } else {
-    getVideo(move.Link);
-    videoOrText = video;
-    link = move?.Link;
-  }
+	return (
+		<div className="DanceMove">
+			<Link to={'/edit/' + params.id} className="squre-pen-wrapper">
+				<FontAwesomeIcon icon={faEdit} className="squre-pen" />
+			</Link>
 
-  return (
-    <div className="DanceMove">
-      <Link to={"/edit/" + params.id} className="squre-pen-wrapper">
-        <FontAwesomeIcon icon={faEdit} className="squre-pen" />
-      </Link>
+			<h3>{move?.Move}</h3>
+			<p>by</p>
+			<h3>{move?.Creator}</h3>
 
-      <h3>{move?.Move}</h3>
-      <p>by</p>
-      <h3>{move?.Creator}</h3>
-
-      <div id="notesAndIGWrapper">
-        <p>
-          {notesText}
-          <span>{notes}</span>
-        </p>
-        <a href={link} target="_blank" rel="noreferrer noopener" id="IG">
-          {parse(`${videoOrText}`)}
-        </a>
-      </div>
-    </div>
-  );
+			<div id="notesAndIGWrapper">
+				<p>
+					{notesText}
+					<span>{notes}</span>
+				</p>
+				{isLoading && <Loader />}
+				{!isLoading && (
+					<a href={link} target="_blank" rel="noreferrer noopener" id="IG">
+						{parse(`${videoOrText}`)}
+					</a>
+				)}
+			</div>
+		</div>
+	);
 }
 
 export default DanceMove;
