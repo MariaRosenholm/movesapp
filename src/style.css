@@ -83,13 +83,17 @@ body {
 .main-area-front {
   background: var(--homepage-gradient);
   padding-top: 5.5em;
-  display: flex;
+  display: inherit;
   flex-direction: column;
   height: 100vh;
   width: 100vw;
   justify-content: space-between;
   align-items: center;
   padding-bottom: 5vh;
+}
+
+.main-text {
+  margin-left: 140px;
 }
 
 h1 {
@@ -122,6 +126,7 @@ h1 {
 
 .logo {
   transform: scale(0.7);
+  margin-left: 60px;
 }
 
 label {
