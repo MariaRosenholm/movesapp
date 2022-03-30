@@ -50,7 +50,7 @@ function DanceMove({ dancelist }) {
 
 	return (
 		<div className="DanceMove">
-			<Link to={'/edit/' + params.id} className="squre-pen-wrapper">
+			<Link to={'movesapp/edit/' + params.id} className="squre-pen-wrapper">
 				<FontAwesomeIcon icon={faEdit} className="squre-pen" />
 			</Link>
 
