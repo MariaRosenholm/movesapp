@@ -44,7 +44,7 @@ const EditMove = ({ dancelist, getAllMoves }) => {
       .then(getAllMoves)
       .then(() => {
         timeoutId = setTimeout(() => {
-          navigate("/moves/" + input.Id);
+          navigate("/movesapp/moves/" + input.Id);
         }, 5000);
         setShowSaved(true);
       })
