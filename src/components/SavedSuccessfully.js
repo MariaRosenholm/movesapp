@@ -3,11 +3,10 @@ import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 
-const SavedSuccessfully = ({ path, reload, timeoutId }) => {
+const SavedSuccessfully = ({ path, timeoutId }) => {
   let navigate = useNavigate();
 
   const refreshPage = () => {
-    if (reload) return window.location.reload();
     clearTimeout(timeoutId);
     navigate(path);
   };

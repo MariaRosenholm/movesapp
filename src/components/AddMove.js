@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import SavedSuccessfully from './SavedSuccessfully';
+import React, { useState } from "react";
+import SavedSuccessfully from "./SavedSuccessfully";
 
 const AddMove = ({ getAllMoves }) => {
   const initialState = {
-    Move: '',
-    Creator: '',
-    HOX: '',
-    Link: '',
+    Move: "",
+    Creator: "",
+    HOX: "",
+    Link: "",
   };
   const [inputData, setInputData] = useState(initialState);
   const [showSaved, setShowSaved] = useState(false);
@@ -23,9 +23,9 @@ const AddMove = ({ getAllMoves }) => {
       hox: inputData.HOX,
       link: inputData.Link,
     };
-    fetch('http://localhost:4000/addNew', {
-      method: 'POST',
-      headers: { 'Content-type': 'application/json' },
+    fetch("http://localhost:4000/addNew", {
+      method: "POST",
+      headers: { "Content-type": "application/json" },
       body: JSON.stringify(dataForBackend),
     })
       .then(getAllMoves)
@@ -83,7 +83,7 @@ const AddMove = ({ getAllMoves }) => {
   return (
     <>
       {addMoveForm()}
-      {showSaved && <SavedSuccessfully reload={true} />}
+      {showSaved && <SavedSuccessfully path={"/movesapp/search/"} />}
     </>
   );
 };
