@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import SavedSuccessfully from './SavedSuccessfully';
+import React, { useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import SavedSuccessfully from "./SavedSuccessfully";
 
-const baseURL = 'http://localhost:4000/updateMove';
+const baseURL = "http://localhost:4000/updateMove";
 
 const EditMove = ({ dancelist, getAllMoves }) => {
   const navigate = useNavigate();
@@ -12,9 +12,9 @@ const EditMove = ({ dancelist, getAllMoves }) => {
   const startingInput = {
     Id: +params.id,
     Move: move?.Move,
-    Creator: move?.Creator || '',
-    HOX: move?.HOX || '',
-    Link: move?.Link || '',
+    Creator: move?.Creator || "",
+    HOX: move?.HOX || "",
+    Link: move?.Link || "",
   };
 
   const [input, setInput] = useState(startingInput);
@@ -35,21 +35,21 @@ const EditMove = ({ dancelist, getAllMoves }) => {
       link: input.Link,
     };
     fetch(baseURL, {
-      method: 'PUT',
+      method: "PUT",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(dataForBackend),
     })
       .then(getAllMoves)
       .then(() => {
         timeoutId = setTimeout(() => {
-          navigate('/moves/' + input.Id);
+          navigate("/moves/" + input.Id);
         }, 5000);
         setShowSaved(true);
       })
       .catch((error) => {
-        console.log('this is the error', error);
+        console.log("this is the error", error);
       });
   };
 
@@ -103,7 +103,10 @@ const EditMove = ({ dancelist, getAllMoves }) => {
         </div>
       </form>
       {showSaved && (
-        <SavedSuccessfully path={'/moves/' + input.Id} timeoutId={timeoutId} />
+        <SavedSuccessfully
+          path={"/movesapp/moves/" + input.Id}
+          timeoutId={timeoutId}
+        />
       )}
     </div>
   );
