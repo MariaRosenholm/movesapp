@@ -25,7 +25,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "npx json-server --port=3001 --id Id --watch db.json",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
