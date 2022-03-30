@@ -16,6 +16,7 @@
   --black: #000000;
   --white: #ffffff;
   --grey: #444444;
+  --dark-grey:	#202020;
   --rubber-red: #d03d70;
   --rubber-red-light: #ff579e;
   --rubber-red-dark: #9c0045;
@@ -132,6 +133,13 @@ h1 {
 label {
   font-size: 18px;
   color: var(--grey);
+  display: block;
+  text-align: center;
+}
+
+.labels {
+  font-size: 18px;
+  color:var(--dark-grey);
   display: block;
   text-align: center;
 }
@@ -353,6 +361,8 @@ a {
   padding: 0.8vh;
   box-shadow: var(--shadow) 0px 5px 3px;
 }
+
+
 
 /* == NEW MOVE == */
 
