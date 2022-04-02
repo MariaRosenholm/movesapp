@@ -23,7 +23,7 @@ const AddMove = ({ getAllMoves }) => {
       hox: inputData.HOX,
       link: inputData.Link,
     };
-    fetch("http://localhost:4000/addNew", {
+    fetch("https://apricot-cake-10393.herokuapp.com/addNew", {
       method: "POST",
       headers: { "Content-type": "application/json" },
       body: JSON.stringify(dataForBackend),

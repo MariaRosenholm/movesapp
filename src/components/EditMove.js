@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import SavedSuccessfully from "./SavedSuccessfully";
 
-const baseURL = "http://localhost:4000/updateMove";
+const baseURL = "https://apricot-cake-10393.herokuapp.com/updateMove";
 
 const EditMove = ({ dancelist, getAllMoves }) => {
   const navigate = useNavigate();
