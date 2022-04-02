@@ -34,19 +34,13 @@ const App = () => {
   return (
     <div className="app">
       <Routes>
-        <Route path="/movesapp/" element={<Main />} />
-        <Route path="/movesapp/login" element={<Login />} />
-        <Route path="/movesapp/search" element={<Search dancelist={moves} />} />
+        <Route path="/" element={<Main />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/search" element={<Search dancelist={moves} />} />
+        <Route path={"/moves/:id"} element={<DanceMove dancelist={moves} />} />
+        <Route path="/new" element={<AddMove getAllMoves={getAllMoves} />} />
         <Route
-          path={"/movesapp/moves/:id"}
-          element={<DanceMove dancelist={moves} />}
-        />
-        <Route
-          path="/movesapp/new"
-          element={<AddMove getAllMoves={getAllMoves} />}
-        />
-        <Route
-          path="/movesapp/edit/:id"
+          path="/edit/:id"
           element={<EditMove dancelist={moves} getAllMoves={getAllMoves} />}
         />
       </Routes>

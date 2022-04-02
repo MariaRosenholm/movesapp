@@ -35,6 +35,8 @@ function DanceMove({ dancelist }) {
         access_token: process.env.REACT_APP_access_token,
       },
       function (response) {
+        console.log("This is response: " + response);
+        console.log("This is response.html: " + response.html);
         response.html !== undefined
           ? setVideoOrText(response.html)
           : setVideoOrText("Given url is not working!");
@@ -52,7 +54,7 @@ function DanceMove({ dancelist }) {
 
   return (
     <div className="DanceMove">
-      <Link to={"/movesapp/edit/" + params.id} className="squre-pen-wrapper">
+      <Link to={"/edit/" + params.id} className="squre-pen-wrapper">
         <FontAwesomeIcon icon={faEdit} className="squre-pen" />
       </Link>
 

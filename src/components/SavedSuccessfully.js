@@ -9,6 +9,7 @@ const SavedSuccessfully = ({ path, timeoutId }) => {
   const refreshPage = () => {
     clearTimeout(timeoutId);
     navigate(path);
+    window.location.reload();
   };
 
   return (
