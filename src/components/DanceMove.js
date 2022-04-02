@@ -35,7 +35,9 @@ function DanceMove({ dancelist }) {
         access_token: process.env.REACT_APP_access_token,
       },
       function (response) {
-        setVideoOrText(response.html);
+        response.html !== undefined
+          ? setVideoOrText(response.html)
+          : setVideoOrText("Given url is not working!");
         setIsLoading(false);
       }
     );
