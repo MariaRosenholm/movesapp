@@ -1,4 +1,4 @@
-# MOVES APP
+# MOVES IT APP
 
 This is a Business College Helsinki school team project.
 This application is for storing information about dancers and their dance moves.
