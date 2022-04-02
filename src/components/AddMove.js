@@ -83,7 +83,7 @@ const AddMove = ({ getAllMoves }) => {
   return (
     <>
       {addMoveForm()}
-      {showSaved && <SavedSuccessfully path={"/movesapp/search/"} />}
+      {showSaved && <SavedSuccessfully path={"/new"} />}
     </>
   );
 };

@@ -6,7 +6,7 @@ import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 const ListItem = ({ move, creator, Id, link }) => {
   return (
     <div className="ListItem">
-      <Link to={"/movesapp/moves/" + Id}>
+      <Link to={"/moves/" + Id}>
         <p>
           {move} by {creator}{" "}
           <span className="insta-span">

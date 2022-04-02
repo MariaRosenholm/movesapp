@@ -10,13 +10,13 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <div className="footerwrapper">
-      <Link to="/movesapp/">
+      <Link to="/">
         <FontAwesomeIcon icon={faHome} className="footericon" />
       </Link>
-      <Link to="/movesapp/new">
+      <Link to="/new">
         <FontAwesomeIcon icon={faPlusSquare} className="footericon" />
       </Link>
-      <Link to="/movesapp/search">
+      <Link to="/search">
         <FontAwesomeIcon icon={faSearch} className="footericon" />
       </Link>
     </div>

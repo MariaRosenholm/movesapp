@@ -1,6 +1,6 @@
 {
   "name": "movesapp",
-  "homepage": "https://mariarosenholm.github.io/movesapp/",
+  "homepage": "https://movesit.herokuapp.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

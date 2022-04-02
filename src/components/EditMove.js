@@ -44,7 +44,7 @@ const EditMove = ({ dancelist, getAllMoves }) => {
       .then(getAllMoves)
       .then(() => {
         timeoutId = setTimeout(() => {
-          navigate("/movesapp/moves/" + input.Id);
+          navigate("/moves/" + input.Id);
         }, 5000);
         setShowSaved(true);
       })
@@ -103,10 +103,7 @@ const EditMove = ({ dancelist, getAllMoves }) => {
         </div>
       </form>
       {showSaved && (
-        <SavedSuccessfully
-          path={"/movesapp/moves/" + input.Id}
-          timeoutId={timeoutId}
-        />
+        <SavedSuccessfully path={"/moves/" + input.Id} timeoutId={timeoutId} />
       )}
     </div>
   );
