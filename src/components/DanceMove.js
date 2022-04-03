@@ -6,6 +6,7 @@ import { faEdit } from "@fortawesome/free-solid-svg-icons";
 import { useState, useEffect } from "react";
 import parse from "html-react-parser";
 import Loader from "./Loader";
+import aws from "aws-sdk";
 
 function DanceMove({ dancelist }) {
   const [isLoading, setIsLoading] = useState(true);
@@ -16,6 +17,10 @@ function DanceMove({ dancelist }) {
   let link = move?.Link;
   let notes;
   let notesText;
+
+  let s3 = new aws.S3({
+    key: process.env.REACT_APP_access_token,
+  });
 
   useEffect(() => {
     if (link) {
@@ -32,10 +37,10 @@ function DanceMove({ dancelist }) {
       "GET",
       {
         url: link,
-        access_token: process.env.REACT_APP_access_token,
+        access_token: s3.key,
       },
       function (response) {
-        console.log(process.env.REACT_APP_access_token);
+        console.log(s3.key);
         console.log(response);
         console.log("This is response.html: " + response.html);
         response.html !== undefined
