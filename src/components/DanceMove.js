@@ -35,6 +35,7 @@ function DanceMove({ dancelist }) {
         access_token: process.env.REACT_APP_access_token,
       },
       function (response) {
+        console.log(process.env.REACT_APP_access_token);
         console.log(response);
         console.log("This is response.html: " + response.html);
         response.html !== undefined
