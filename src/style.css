@@ -239,7 +239,7 @@ a {
 /* == DANCEMOVE  == */
 .DanceMove {
   width: 100%;
-  height: 100vh;
+  height: 90vh;
   text-align: center;
   background: var(--editpage-gradient);
   display: flex;
@@ -247,7 +247,13 @@ a {
   align-items: center;
   position: absolute;
   overflow: hidden;
-  padding-top: 25vh;
+  font-size: 18px;
+  padding-top: 15vh;
+}
+
+.nameAndCreator {
+  display: flex;
+  flex-direction: row;
 }
 
 .squre-pen {
@@ -270,30 +276,31 @@ a {
 .DanceMove h3 {
   font-family: var(--app-name-font);
   color: var(--rubber-red);
-  font-size: 2rem;
+  font-size: 26px;
+}
+
+.moveName {
+  -webkit-text-stroke: 0.1px var(--black);
+  font-size: 30px;
 }
 
 #notesAndIGWrapper {
-  margin-top: 5vh;
-  height: 40vh;
+  height: 55vh;
+  width: 80vw;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: 1px #6ff2dc solid;
+  box-shadow: var(--keppel-green) 1px 1px 1px;
 }
 
-#notesAndIGWrapper span {
-  font-style: italic;
+.instagram-media {
+  height: 55vh;
 }
 
-#IG {
-  margin-bottom: 2vh;
-  margin-top: 4vh;
-  height: 70vh;
-  width: 60%;
-  background-color: var(--rubber-red-light);
-  color: var(--black);
-  overflow-x: auto;
+.notes {
+  margin-bottom: 3vh;
 }
 
 /* == EDIT MOVE == */
@@ -543,7 +550,7 @@ p {
   align-items: center;
   flex-direction: column;
   font-size: 1.2rem;
-  padding-bottom: 10vh;
+  padding-bottom: 8vh;
 }
 
 .links {
@@ -557,5 +564,11 @@ p {
 @media screen and (min-width: 755px) {
   .information {
     max-width: 50vw;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .informationAndSupportWrapper {
+    font-size: 1rem;
   }
 }
