@@ -19,7 +19,7 @@ function DanceMove({ dancelist }) {
   useEffect(() => {
     move?.HOX ? setNotes(move.HOX) : setNotes("No notes added");
     !link ? setIsLoading(false) : setIsLoading(true);
-    move.Creator ? setBy(true) : setBy(false);
+    move?.Creator ? setBy(true) : setBy(false);
   }, [link, move?.HOX, move?.Creator]);
 
   return (
@@ -35,28 +35,30 @@ function DanceMove({ dancelist }) {
       <p className="notes">
         <span>{notes}</span>
       </p>
-      <div id="notesAndIGWrapper">
-        {!link && <p>No instagram video added!</p>}
-        {isLoading && <Loader />}
-        {link && (
-          <InstagramEmbed
-            url={link}
-            clientAccessToken={process.env.REACT_APP_access_token}
-            maxWidth={320}
-            hideCaption={true}
-            containerTagName="div"
-            protocol=""
-            injectScript
-            onLoading={() => {}}
-            onSuccess={() => {
-              setIsLoading(false);
-            }}
-            onAfterRender={() => {}}
-            onFailure={() => {}}
-          />
-        )}
+      {isLoading && <Loader />}
 
-      </div>
+
+      {!link && <div id="notesAndIGWrapper"><p>No instagram video added!</p> </div>}
+
+      {link && (
+        <InstagramEmbed
+          url={link}
+          clientAccessToken={process.env.REACT_APP_access_token}
+          maxWidth={320}
+          hideCaption={true}
+          containerTagName="div"
+          protocol=""
+          injectScript
+          onLoading={() => { }}
+          onSuccess={() => {
+            setIsLoading(false);
+          }}
+          onAfterRender={() => { }}
+          onFailure={() => { }}
+        />
+      )}
+
+
     </div>
   );
 }
