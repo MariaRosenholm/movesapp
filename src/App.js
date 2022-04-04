@@ -9,12 +9,7 @@ import EditMove from "./components/EditMove";
 import Footer from "./components/Footer";
 import DanceMove from "./components/DanceMove";
 import Menu from "./components/Menu";
-import aws from "aws-sdk";
 require("dotenv").config();
-
-let s3 = new aws.S3({
-  key: process.env.REACT_APP_access_token,
-});
 
 const App = () => {
   const [moves, setMoves] = useState([]);
@@ -42,10 +37,7 @@ const App = () => {
         <Route path="/" element={<Main />} />
         <Route path="/login" element={<Login />} />
         <Route path="/search" element={<Search dancelist={moves} />} />
-        <Route
-          path={"/moves/:id"}
-          element={<DanceMove dancelist={moves} key={s3.key} />}
-        />
+        <Route path={"/moves/:id"} element={<DanceMove dancelist={moves} />} />
         <Route path="/new" element={<AddMove getAllMoves={getAllMoves} />} />
         <Route
           path="/edit/:id"
