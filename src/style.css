@@ -462,7 +462,7 @@ a {
 
 .icons-wrapper {
   padding: 10px;
-  width: 180px;
+  width: 220px;
 }
 
 p {
@@ -526,4 +526,36 @@ p {
 .checkIcon {
   color: var(--grey);
   font-size: 4rem;
+}
+
+/* == INFORMATION AND SUPPORT== */
+
+.information {
+  max-width: 85vw;
+  margin-bottom: 3vh;
+}
+
+.informationAndSupportWrapper {
+  width: 100vw;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 1.2rem;
+  padding-bottom: 10vh;
+}
+
+.links {
+  color: var(--rubber-red-dark);
+}
+
+.informationAndSupportWrapper h2 {
+  margin: 3vh;
+}
+
+@media screen and (min-width: 755px) {
+  .information {
+    max-width: 50vw;
+  }
 }

@@ -9,6 +9,8 @@ import EditMove from "./components/EditMove";
 import Footer from "./components/Footer";
 import DanceMove from "./components/DanceMove";
 import Menu from "./components/Menu";
+import Information from "./components/Information";
+import Support from "./components/Support";
 require("dotenv").config();
 
 const App = () => {
@@ -43,6 +45,8 @@ const App = () => {
           path="/edit/:id"
           element={<EditMove dancelist={moves} getAllMoves={getAllMoves} />}
         />
+        <Route path="/information" element={<Information />} />
+        <Route path="/support" element={<Support />} />
       </Routes>
       <Footer />
       <Menu />
