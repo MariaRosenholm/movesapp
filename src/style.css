@@ -16,7 +16,7 @@
   --black: #000000;
   --white: #ffffff;
   --grey: #444444;
-  --dark-grey:	#202020;
+  --dark-grey: #202020;
   --rubber-red: #d03d70;
   --rubber-red-light: #ff579e;
   --rubber-red-dark: #9c0045;
@@ -84,50 +84,30 @@ body {
 .main-area-front {
   background: var(--homepage-gradient);
   padding-top: 5.5em;
-  display: inherit;
+  display: flex;
   flex-direction: column;
   height: 100vh;
   width: 100vw;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   padding-bottom: 5vh;
 }
-
 .main-text {
-  margin-left: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 h1 {
   font-family: var(--app-name-font);
   color: #6ff2dc;
   font-size: 120px;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   font-weight: normal;
-}
-.main-area h1 {
-  position: relative;
-  left: -30%;
-}
-
-.main-area-front h1 {
-  position: relative;
-  left: -30%;
-}
-
-.ce {
-  position: absolute;
-  transform: rotate(335deg) translate(-2px, 2px);
-  font-style: normal;
-}
-.ves {
-  position: absolute;
-  transform: translate(-5px, 24px);
-  font-style: normal;
 }
 
 .logo {
   transform: scale(0.7);
-  margin-left: 60px;
 }
 
 label {
@@ -139,7 +119,7 @@ label {
 
 .labels {
   font-size: 18px;
-  color:var(--dark-grey);
+  color: var(--dark-grey);
   display: block;
   text-align: center;
 }
@@ -260,7 +240,7 @@ a {
   align-items: center;
   position: absolute;
   overflow: hidden;
-  padding-top: 25vh;
+  padding-top: 15vh;
 }
 
 .squre-pen {
@@ -361,8 +341,6 @@ a {
   padding: 0.8vh;
   box-shadow: var(--shadow) 0px 5px 3px;
 }
-
-
 
 /* == NEW MOVE == */
 

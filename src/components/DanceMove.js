@@ -37,12 +37,12 @@ function DanceMove({ dancelist }) {
         <FontAwesomeIcon icon={faEdit} className="squre-pen" />
       </Link>
 
-      <h3>{move?.Move}</h3>
-      <p>by</p>
-      <h3>{move?.Creator}</h3>
+      <h3 id="dance-move-header">{move?.Move}</h3>
+      <p id="dance-move-p">by</p>
+      <h3 id="dance-move-header">{move?.Creator}</h3>
 
       <div id="notesAndIGWrapper">
-        <p>
+        <p id="dance-move-p">
           {notesText}
           <span>{notes}</span>
         </p>
@@ -62,10 +62,10 @@ function DanceMove({ dancelist }) {
               containerTagName="div"
               protocol=""
               injectScript
-              onLoading={() => {}}
-              onSuccess={() => {}}
-              onAfterRender={() => {}}
-              onFailure={() => {}}
+              onLoading={() => { }}
+              onSuccess={() => { }}
+              onAfterRender={() => { }}
+              onFailure={() => { }}
             />
           </a>
         }
