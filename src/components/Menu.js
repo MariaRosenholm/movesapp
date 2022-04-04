@@ -8,6 +8,7 @@ import {
   faQuestionCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function Menu() {
   let location = useLocation();
@@ -36,20 +37,25 @@ function Menu() {
       />
       <div className={classes}>
         <div className="icons-wrapper">
-          <div className="icon_and_name_wrapper">
-            <FontAwesomeIcon icon={faInfoCircle} className="individual-icon" />
+          <Link to={"/information"}>
+            <div className="icon_and_name_wrapper">
+              <FontAwesomeIcon
+                icon={faInfoCircle}
+                className="individual-icon"
+              />
 
-            <p>information</p>
-          </div>
-
-          <div className="icon_and_name_wrapper">
-            <FontAwesomeIcon
-              icon={faQuestionCircle}
-              className="individual-icon"
-            />
-            <p>support</p>
-          </div>
-
+              <p>More information</p>
+            </div>
+          </Link>
+          <Link to={"/support"}>
+            <div className="icon_and_name_wrapper">
+              <FontAwesomeIcon
+                icon={faQuestionCircle}
+                className="individual-icon"
+              />
+              <p>Support</p>
+            </div>
+          </Link>
           <div className="icon_and_name_wrapper">
             <FontAwesomeIcon
               icon={faShareAltSquare}
