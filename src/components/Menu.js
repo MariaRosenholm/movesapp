@@ -6,9 +6,9 @@ import {
   faInfoCircle,
   faShareAltSquare,
   faQuestionCircle,
-  faSignOutAlt,
 } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function Menu() {
   let location = useLocation();
@@ -37,31 +37,38 @@ function Menu() {
       />
       <div className={classes}>
         <div className="icons-wrapper">
-          <div className="icon_and_name_wrapper">
-            <FontAwesomeIcon icon={faInfoCircle} className="individual-icon" />
+          <Link to={"/information"}>
+            <div className="icon_and_name_wrapper">
+              <FontAwesomeIcon
+                icon={faInfoCircle}
+                className="individual-icon"
+              />
 
-            <p>information</p>
-          </div>
-
+              <p>More information</p>
+            </div>
+          </Link>
+          <Link to={"/support"}>
+            <div className="icon_and_name_wrapper">
+              <FontAwesomeIcon
+                icon={faQuestionCircle}
+                className="individual-icon"
+              />
+              <p>Support</p>
+            </div>
+          </Link>
           <div className="icon_and_name_wrapper">
             <FontAwesomeIcon
               icon={faShareAltSquare}
               className="individual-icon"
             />
-            <p>share link</p>
-          </div>
-
-          <div className="icon_and_name_wrapper">
-            <FontAwesomeIcon
-              icon={faQuestionCircle}
-              className="individual-icon"
-            />
-            <p>support</p>
-          </div>
-
-          <div className="icon_and_name_wrapper">
-            <FontAwesomeIcon icon={faSignOutAlt} className="individual-icon" />
-            <p>sign out</p>
+            <p
+              onClick={() => {
+                navigator.clipboard.writeText("https://movesit.herokuapp.com/");
+                clickHandler();
+              }}
+            >
+              Click here to copy the link for the Moves it and share it!
+            </p>
           </div>
         </div>
       </div>

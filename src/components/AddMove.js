@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import SavedSuccessfully from "./SavedSuccessfully";
+import React, { useState } from 'react';
+import SavedSuccessfully from './SavedSuccessfully';
 
 const AddMove = ({ getAllMoves }) => {
   const initialState = {
-    Move: "",
-    Creator: "",
-    HOX: "",
-    Link: "",
+    Move: '',
+    Creator: '',
+    HOX: '',
+    Link: '',
   };
   const [inputData, setInputData] = useState(initialState);
   const [showSaved, setShowSaved] = useState(false);
@@ -23,9 +23,9 @@ const AddMove = ({ getAllMoves }) => {
       hox: inputData.HOX,
       link: inputData.Link,
     };
-    fetch("https://apricot-cake-10393.herokuapp.com/addNew", {
-      method: "POST",
-      headers: { "Content-type": "application/json" },
+    fetch('https://apricot-cake-10393.herokuapp.com/addNew', {
+      method: 'POST',
+      headers: { 'Content-type': 'application/json' },
       body: JSON.stringify(dataForBackend),
     })
       .then(getAllMoves)
@@ -41,7 +41,7 @@ const AddMove = ({ getAllMoves }) => {
       <div className="addmove">
         <h3 className="addMoveHeader">Add Move</h3>
         <form className="addMoveForm" onSubmit={addMoveSubmitHandler}>
-          <p className="labels">Add new MOVE NAME</p>
+          <p className="labels">Move name*</p>
           <input
             type="text"
             name="Move"
@@ -50,27 +50,29 @@ const AddMove = ({ getAllMoves }) => {
             value={inputData.Move}
             onChange={inputHandler}
           />
-          <p className="labels">Add CREATOR'S NAME (optional)</p>
+          <p className="labels">Creator name</p>
           <input
             type="text"
             name="Creator"
             value={inputData.Creator}
             onChange={inputHandler}
           />
-          <p className="labels">Add NOTE (optional)</p>
+          <p className="labels">Notes</p>
           <input
             type="text"
             name="HOX"
             maxLength="200"
             value={inputData.HOX}
             onChange={inputHandler}
+            className="notes_field"
           />
-          <p className="labels">Add INSTAGRAM LINK (optional)</p>
+          <p className="labels">Link</p>
           <input
             type="text"
             name="Link"
             value={inputData.Link}
             onChange={inputHandler}
+            className="link_field"
           />
           <button type="submit" className="savebutton">
             save
@@ -83,7 +85,7 @@ const AddMove = ({ getAllMoves }) => {
   return (
     <>
       {addMoveForm()}
-      {showSaved && <SavedSuccessfully path={"/new"} />}
+      {showSaved && <SavedSuccessfully path={'/new'} />}
     </>
   );
 };

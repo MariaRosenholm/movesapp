@@ -6,23 +6,23 @@ This application is build for specific dance group to help them to keep track wh
 
 ## Built with:
 
-- HTML
-- JS
-- CSS
+Frontend:
+
 - React
+- CSS
+- HTML
 - Facebook Graph API
 
+[Backend:](https://github.com/Termanty/MovesApp-backend)
+
+- NodeJS
+- Express
+- TypeScript
+- MariaDB/MySQL
+
+Deployment: [Heroku](https://movesit.herokuapp.com/)
+
 ## How to run the app
-
-### How to use JSON-server in development
-
-You can start JSON-server with this command:
-
-```zsh
-npm run server
-```
-
-Server will use db.json file as it's data storage.
 
 ### Install the dependencies
 
@@ -38,8 +38,8 @@ npm start
 
 ## Who made this
 
-- Altynay Sabitzhan @Altynay-ayyao
-- Saara Leppihalme @SaaraLeppis
-- Noora Jumppanen @NooraJumppanen
-- Tero Mäntylä @Termanty
-- Maria Rosenholm @MariaRosenholm
+- [Altynay Sabitzhan](https://github.com/Altynay-ayyao)
+- [Saara Leppihalme](https://github.com/SaaraLeppis)
+- [Noora Jumppanen](https://github.com/NooraJumppanen)
+- [Tero Mäntylä](https://github.com/Termanty)
+- [Maria Rosenholm](https://github.com/MariaRosenholm)

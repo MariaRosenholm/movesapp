@@ -20,6 +20,7 @@
   --rubber-red: #d03d70;
   --rubber-red-light: #ff579e;
   --rubber-red-dark: #9c0045;
+  --pink-dark: rgba(223, 70, 159, 0.7);
   --keppel-green: rgb(50, 191, 170);
   --keppel-green-light: #6ff2dc;
   --keppel-green-dark: #008e7b;
@@ -106,22 +107,10 @@ h1 {
   font-weight: normal;
 }
 
+
 .logo {
   transform: scale(0.7);
-}
-
-label {
-  font-size: 18px;
-  color: var(--grey);
-  display: block;
-  text-align: center;
-}
-
-.labels {
-  font-size: 18px;
-  color: var(--dark-grey);
-  display: block;
-  text-align: center;
+  margin-left: 60px;
 }
 
 #main-submit {
@@ -176,8 +165,8 @@ input {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: right;
-  padding-top: 1vh;
+  justify-content: center;
+  padding: 3rem 2rem 3rem 2rem;
   margin-bottom: 8vh;
   z-index: 2;
 }
@@ -187,9 +176,9 @@ input {
   padding: 0.8vh;
   padding-left: 3vw;
   border-radius: 20px;
-  margin: 2vh 6vh 2vh 0;
   font-family: var(--app-body-font);
   font-size: 16px;
+  margin: unset;
 }
 
 .search input:focus {
@@ -232,7 +221,7 @@ a {
 /* == DANCEMOVE  == */
 .DanceMove {
   width: 100%;
-  height: 100vh;
+  height: 90vh;
   text-align: center;
   background: var(--editpage-gradient);
   display: flex;
@@ -240,7 +229,13 @@ a {
   align-items: center;
   position: absolute;
   overflow: hidden;
+  font-size: 18px;
   padding-top: 15vh;
+}
+
+.nameAndCreator {
+  display: flex;
+  flex-direction: row;
 }
 
 .squre-pen {
@@ -263,30 +258,31 @@ a {
 .DanceMove h3 {
   font-family: var(--app-name-font);
   color: var(--rubber-red);
-  font-size: 2rem;
+  font-size: 26px;
+}
+
+.moveName {
+  -webkit-text-stroke: 0.1px var(--black);
+  font-size: 30px;
 }
 
 #notesAndIGWrapper {
-  margin-top: 5vh;
-  height: 40vh;
+  height: 55vh;
+  width: 80vw;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: 1px #6ff2dc solid;
+  box-shadow: var(--keppel-green) 1px 1px 1px;
 }
 
-#notesAndIGWrapper span {
-  font-style: italic;
+.instagram-media {
+  height: 55vh;
 }
 
-#IG {
-  margin-bottom: 2vh;
-  margin-top: 4vh;
-  height: 70vh;
-  width: 60%;
-  background-color: var(--rubber-red-light);
-  color: var(--black);
-  overflow-x: auto;
+.notes {
+  margin-bottom: 3vh;
 }
 
 /* == EDIT MOVE == */
@@ -317,15 +313,15 @@ a {
   margin-top: 1rem;
 }
 
-.edit_move_input {
-  border-radius: 3px;
+.editmove_form input {
+  border-radius: 5px;
   width: 80%;
   font-family: var(--app-body-font);
   font-size: 16px;
 }
 
 .edit_move_input:focus {
-  outline: 2px solid var(--rubber-red-light);
+  outline: 2px solid var(--keppel-green-light);
 }
 
 .saveChangesButton {
@@ -342,14 +338,30 @@ a {
   box-shadow: var(--shadow) 0px 5px 3px;
 }
 
+/* == EDIT MOVES AND NEW MOVE COMMONLY USED LABELS AND INPUTS == */
+
+.labels {
+  font-size: 16px;
+  color: var(--black);
+  align-self: baseline;
+  margin-left: 41px;
+}
+
+.notes_field {
+  height: 60px;
+}
+.link_field {
+  height: 76px;
+}
+
 /* == NEW MOVE == */
 
 .addmove {
   height: 100vh;
   background: linear-gradient(
     to bottom,
-    var(--rubber-red-light) 0%,
-    var(--rubber-red-dark) 100%
+    var(--pink-dark) 0%,
+    var(--white) 100%
   );
 }
 
@@ -379,22 +391,22 @@ a {
 }
 
 .addMoveForm input:focus {
-  outline: 2px solid var(--keppel-green-light);
+  outline: 2px solid var(--rubber-red-light);
 }
 
 .savebutton {
   text-transform: uppercase;
-  background-color: var(--keppel-green-light);
+  background-color: var(--rubber-red-dark);
+  color: var(--white);
   width: 150px;
   height: 3rem;
   margin: 1rem;
-  border: solid 0.5px var(--grey);
-  border-radius: 3px;
+  border: solid 0.5px var(--white);
+  border-radius: 5px;
   font-family: var(--app-body-font);
   font-size: 18px;
   cursor: pointer;
   padding: 0.8vh;
-  box-shadow: var(--shadow-dark) 0px 5px 3px;
 }
 
 /* == FOOTER == */
@@ -426,7 +438,6 @@ a {
   top: 23px;
   left: 15px;
   z-index: 10;
-  width: 180px;
   height: auto;
 }
 
@@ -440,6 +451,7 @@ a {
 
 .icons-wrapper {
   padding: 10px;
+  width: 220px;
 }
 
 p {
@@ -475,7 +487,7 @@ p {
 
 .saved_overlay {
   position: fixed;
-  top: 60vh;
+  top: 70vh;
   left: 50;
   border-radius: 50%;
   height: 175px;
@@ -503,4 +515,42 @@ p {
 .checkIcon {
   color: var(--grey);
   font-size: 4rem;
+}
+
+/* == INFORMATION AND SUPPORT== */
+
+.information {
+  max-width: 85vw;
+  margin-bottom: 3vh;
+}
+
+.informationAndSupportWrapper {
+  width: 100vw;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 1.2rem;
+  padding-bottom: 8vh;
+}
+
+.links {
+  color: var(--rubber-red-dark);
+}
+
+.informationAndSupportWrapper h2 {
+  margin: 3vh;
+}
+
+@media screen and (min-width: 755px) {
+  .information {
+    max-width: 50vw;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .informationAndSupportWrapper {
+    font-size: 1rem;
+  }
 }
