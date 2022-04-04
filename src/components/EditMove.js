@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
-import SavedSuccessfully from "./SavedSuccessfully";
+import React, { useState } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+import SavedSuccessfully from './SavedSuccessfully';
 
-const baseURL = "https://apricot-cake-10393.herokuapp.com/updateMove";
+const baseURL = 'https://apricot-cake-10393.herokuapp.com/updateMove';
 
 const EditMove = ({ dancelist, getAllMoves }) => {
   const navigate = useNavigate();
@@ -12,9 +12,9 @@ const EditMove = ({ dancelist, getAllMoves }) => {
   const startingInput = {
     Id: +params.id,
     Move: move?.Move,
-    Creator: move?.Creator || "",
-    HOX: move?.HOX || "",
-    Link: move?.Link || "",
+    Creator: move?.Creator || '',
+    HOX: move?.HOX || '',
+    Link: move?.Link || '',
   };
 
   const [input, setInput] = useState(startingInput);
@@ -35,21 +35,21 @@ const EditMove = ({ dancelist, getAllMoves }) => {
       link: input.Link,
     };
     fetch(baseURL, {
-      method: "PUT",
+      method: 'PUT',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(dataForBackend),
     })
       .then(getAllMoves)
       .then(() => {
         timeoutId = setTimeout(() => {
-          navigate("/moves/" + input.Id);
+          navigate('/moves/' + input.Id);
         }, 5000);
         setShowSaved(true);
       })
       .catch((error) => {
-        console.log("this is the error", error);
+        console.log('this is the error', error);
       });
   };
 
@@ -59,38 +59,36 @@ const EditMove = ({ dancelist, getAllMoves }) => {
         <h1 className="editmove_header">Edit Move</h1>
       </div>
       <form className="editmove_form">
-        <p className="labels">EDIT move name</p>
+        <p className="labels">Moves name*</p>
         <input
           type="text"
-          className="edit_move_input"
           required
           name="Move"
           value={input.Move}
           onChange={inputHandler}
         />
-        <p className="labels">ADD creator name</p>
+        <p className="labels">Creator name</p>
         <input
           type="text"
-          className="edit_move_input"
           name="Creator"
           value={input.Creator}
           onChange={inputHandler}
         />
-        <p className="labels">ADD notes</p>
+        <p className="labels">Notes</p>
         <input
-          className="edit_move_input"
           maxLength="25"
           name="HOX"
           value={input.HOX}
           onChange={inputHandler}
+          className="notes_field"
         />
-        <p className="labels">ADD instagram link</p>
+        <p className="labels">Link</p>
         <input
           type="text"
-          className="edit_move_input"
           name="Link"
           value={input.Link}
           onChange={inputHandler}
+          className="link_field"
         />
         <div>
           <button
@@ -103,7 +101,7 @@ const EditMove = ({ dancelist, getAllMoves }) => {
         </div>
       </form>
       {showSaved && (
-        <SavedSuccessfully path={"/moves/" + input.Id} timeoutId={timeoutId} />
+        <SavedSuccessfully path={'/moves/' + input.Id} timeoutId={timeoutId} />
       )}
     </div>
   );
