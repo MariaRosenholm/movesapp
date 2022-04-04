@@ -15,7 +15,7 @@ const App = () => {
   const [moves, setMoves] = useState([]);
 
   const getAllMoves = () => {
-    fetch("http://localhost:4000/allMoves/")
+    fetch("https://apricot-cake-10393.herokuapp.com/allmoves")
       .then((response) => response.json())
       .then((data) => {
         const cleanedData = data.map((move) => ({
@@ -25,7 +25,6 @@ const App = () => {
           HOX: move.hox || "",
           Link: move.link || "",
         }));
-        console.log(cleanedData);
         setMoves(cleanedData);
       });
   };

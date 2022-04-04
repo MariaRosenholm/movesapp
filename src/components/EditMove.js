@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import SavedSuccessfully from "./SavedSuccessfully";
 
-const baseURL = "http://localhost:4000/updateMove";
+const baseURL = "https://apricot-cake-10393.herokuapp.com/updateMove";
 
 const EditMove = ({ dancelist, getAllMoves }) => {
   const navigate = useNavigate();
@@ -59,34 +59,34 @@ const EditMove = ({ dancelist, getAllMoves }) => {
         <h1 className="editmove_header">Edit Move</h1>
       </div>
       <form className="editmove_form">
+        <p className="labels">EDIT move name</p>
         <input
           type="text"
-          placeholder="EDIT move name"
           className="edit_move_input"
           required
           name="Move"
           value={input.Move}
           onChange={inputHandler}
         />
+        <p className="labels">ADD creator name</p>
         <input
           type="text"
-          placeholder="ADD creator name"
           className="edit_move_input"
           name="Creator"
           value={input.Creator}
           onChange={inputHandler}
         />
+        <p className="labels">ADD notes</p>
         <input
-          placeholder="ADD notes"
           className="edit_move_input"
           maxLength="25"
           name="HOX"
           value={input.HOX}
           onChange={inputHandler}
         />
+        <p className="labels">ADD instagram link</p>
         <input
           type="text"
-          placeholder="ADD instagram link"
           className="edit_move_input"
           name="Link"
           value={input.Link}

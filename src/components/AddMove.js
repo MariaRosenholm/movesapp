@@ -23,7 +23,7 @@ const AddMove = ({ getAllMoves }) => {
       hox: inputData.HOX,
       link: inputData.Link,
     };
-    fetch("http://localhost:4000/addNew", {
+    fetch("https://apricot-cake-10393.herokuapp.com/addNew", {
       method: "POST",
       headers: { "Content-type": "application/json" },
       body: JSON.stringify(dataForBackend),
@@ -41,34 +41,34 @@ const AddMove = ({ getAllMoves }) => {
       <div className="addmove">
         <h3 className="addMoveHeader">Add Move</h3>
         <form className="addMoveForm" onSubmit={addMoveSubmitHandler}>
+          <p className="labels">Add new MOVE NAME</p>
           <input
             type="text"
             name="Move"
-            placeholder="Add new MOVE NAME"
             size="10"
             required
             value={inputData.Move}
             onChange={inputHandler}
           />
+          <p className="labels">Add CREATOR'S NAME (optional)</p>
           <input
             type="text"
             name="Creator"
-            placeholder="Add CREATOR'S NAME (optional)"
             value={inputData.Creator}
             onChange={inputHandler}
           />
+          <p className="labels">Add NOTE (optional)</p>
           <input
             type="text"
             name="HOX"
-            placeholder="Add NOTE (optional)"
             maxLength="200"
             value={inputData.HOX}
             onChange={inputHandler}
           />
+          <p className="labels">Add INSTAGRAM LINK (optional)</p>
           <input
             type="text"
             name="Link"
-            placeholder="Add INSTAGRAM LINK (optional)"
             value={inputData.Link}
             onChange={inputHandler}
           />
@@ -83,7 +83,7 @@ const AddMove = ({ getAllMoves }) => {
   return (
     <>
       {addMoveForm()}
-      {showSaved && <SavedSuccessfully reload={true} />}
+      {showSaved && <SavedSuccessfully path={"/new"} />}
     </>
   );
 };
