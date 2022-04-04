@@ -55,6 +55,7 @@ function DanceMove({ dancelist }) {
             onFailure={() => {}}
           />
         )}
+
       </div>
     </div>
   );
