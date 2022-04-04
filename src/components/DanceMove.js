@@ -3,33 +3,22 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit } from "@fortawesome/free-solid-svg-icons";
-// import { useState, useEffect } from "react";
-// import Loader from "./Loader";
+import { useState, useEffect } from "react";
+import Loader from "./Loader";
 import InstagramEmbed from "react-instagram-embed";
 
 function DanceMove({ dancelist }) {
-  // const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState();
+  const [notes, setNotes] = useState();
   const params = useParams();
 
   let move = dancelist.find((move) => move.Id === +params.id);
   let link = move?.Link;
-  let notes;
-  let notesText;
 
-  /* useEffect(() => {
-    if (link) {
-    } else {
-      setIsLoading(false);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []); */
-
-  if (!move?.HOX) {
-    notesText = "No notes added.";
-  } else {
-    notesText = "Notes: ";
-    notes = move?.HOX;
-  }
+  useEffect(() => {
+    move?.HOX ? setNotes(move.HOX) : setNotes("No notes added.");
+    !link ? setIsLoading(false) : setIsLoading(true);
+  }, [link, move?.HOX]);
 
   return (
     <div className="DanceMove">
@@ -43,32 +32,29 @@ function DanceMove({ dancelist }) {
 
       <div id="notesAndIGWrapper">
         <p>
-          {notesText}
           <span>{notes}</span>
         </p>
-        {/* isLoading && <Loader /> */}
-        {
-          /*!isLoading && */ <a
-            href={link}
-            target="_blank"
-            rel="noreferrer noopener"
-            id="IG"
-          >
-            <InstagramEmbed
-              url={link}
-              clientAccessToken={process.env.REACT_APP_access_token}
-              maxWidth={320}
-              hideCaption={false}
-              containerTagName="div"
-              protocol=""
-              injectScript
-              onLoading={() => {}}
-              onSuccess={() => {}}
-              onAfterRender={() => {}}
-              onFailure={() => {}}
-            />
-          </a>
-        }
+        {!link && <h3>No instagram video added!</h3>}
+        {isLoading && <Loader />}
+        {link && (
+          <InstagramEmbed
+            url={link}
+            clientAccessToken={process.env.REACT_APP_access_token}
+            maxWidth={320}
+            hideCaption={true}
+            containerTagName="div"
+            protocol=""
+            injectScript
+            onLoading={() => {}}
+            onSuccess={() => {
+              setIsLoading(false);
+            }}
+            onAfterRender={() => {}}
+            onFailure={() => {
+              <h3>Instagram video cannot be shown!</h3>;
+            }}
+          />
+        )}
       </div>
     </div>
   );
