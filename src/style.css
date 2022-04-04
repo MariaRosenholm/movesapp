@@ -107,10 +107,8 @@ h1 {
   font-weight: normal;
 }
 
-
 .logo {
   transform: scale(0.7);
-  margin-left: 60px;
 }
 
 #main-submit {
@@ -268,7 +266,6 @@ a {
 
 #notesAndIGWrapper {
   height: 55vh;
-  width: 80vw;
   text-align: center;
   display: flex;
   flex-direction: column;
